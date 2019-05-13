@@ -7,6 +7,7 @@
 <style>
   
 
+
 * {
   box-sizing: border-box;
 }
@@ -48,7 +49,7 @@
   display: block;
   border: 2px solid #7f8c8d;
   padding: 14px 10px;
-  width: 30%;
+  width: 40%;
   border-radius: 10px;
   margin-top: 10px; 
   margin-bottom: 5px;
@@ -89,29 +90,51 @@ h1,h2 {
 }
 
 
-/*@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) { /*For tablet screens*/
   .container {
     display: block;
   }  
   .girlimg {
     width: 100%; 
   }
-}*/
+    .imgbox {
+    width: 100%;
+  }
+  .box {
+    padding-left: 0;
+    width: 100%;
+  }
 
-@media only screen and (max-width: 320px) {
+  input[type=text], input[type=password] {
+    width: 40%;
+  }
+
+}
+
+@media only screen and (max-width: 320px) { /*For mobile screens*/
+  .container {
+    display: block;
+  }
+  input[type=text], input[type=password] {
+    width: 100%;
+  }
   .imgbox {
     width: 100%;
   }
+  .box {
+    padding-left: 0;
+    width: 100%;
+  }
   .girlimg {
-    width: 100%; /*For mobile screens*/
+    width: 100%; 
   }
 }
 
 
+
 </style>
 </head>
-<body>
-	<form action="#" method="get">
+<body><form action="#" method="get">
 	<img class="img-banner" src="2c46e1e21b76ea347bba76e650b98d90.jpg" alt="Logo">
 
 	<div class="container">
@@ -122,16 +145,24 @@ h1,h2 {
 		  <div class="box">
 		  	<h1 style="color: #990099;display: block;">Login</h1>
 		  	<h2 style="margin-top: -5px;">Registered Customers</h2>
-		  	<p style="color: #808080;margin-top: -10px;">If you have an account with us.please login with your credentials</p>
-			  <label>Email</label><br>
-			  <input type="text" name="mail" placeholder="Enter your Email" required> <i class="far fa-envelope"></i><br>
-			  <label>Password</label><br>
-			  <input type="Password" name="passd" placeholder="Enter your Passowrd" required><i class="fas fa-lock"></i>
-			  <br>
-			  <input type="submit" name="ok" value="Login" ><br><br>
+		  	<div style="color: #808080;margin-top: -10px;margin-bottom: 10px;">If you have an account with us.please login with your credentials</div>
+		  	
+			<div>
+				<div><label>Email</label></div>
+			  <input type="text" name="mail" placeholder="Enter your Email" required><i class="material-icons" style="position:absolute;margin-left:-35px;margin-top: 20px;">email</i>
+			  <!-- Don't give the space between closing bracket(>) of "input tag" and opening bracket(<) of i tag.it will treat i as "block level" element not as "inline element(like span)"  -->
+			</div>
+			  
+			<div>
+			  <div><label>Password</label></div>
+			  <input type="Password" name="passd" placeholder="Enter your Passowrd" required><i class="material-icons" style="position:absolute;margin-left:-35px;margin-top:20px;">lock</i>
+			</div>
+			
+
+			  <input type="submit" name="ok" value="Login" >
 			  <hr>
 			  <h2>New Customers</h2>
-			  <p style="color: #808080">By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping address,veiw and track your order in your account and more.</p>
+			  <div style="color: #808080">By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping address,veiw and track your order in your account and more.</div>
 			  <button onclick="myfun()">CREATE ACCOUNT</button>
 		</div>
 	</div>
