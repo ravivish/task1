@@ -2,97 +2,145 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
+  
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
+* {
   box-sizing: border-box;
 }
 
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
 .container {
-  padding: 16px;
+  box-shadow: 2px 8px 20px #888888;
+  padding: 20px;
+  width: 100%;
+  display: flex;
 }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
+  .imgbox {
+    display: inline-block;
+    width: 20%;
+
+  }
+
+ .box {
+  display: inline-block;
+  width: 70%;
+  padding-left: 80px;
+ }
+
+ .girlimg {
+  width: 100%;
+  height: 100%;
+ }
+
+ .img-banner{
+  width: 100px;
+ }
+
+ i {
+  color: #990099;
+ }
+
+ input[type=text], input[type=password] {
+  border: none;
+  display: block;
+  border: 2px solid #7f8c8d;
+  padding: 14px 10px;
+  width: 30%;
+  border-radius: 10px;
+  margin-top: 10px; 
+  margin-bottom: 5px;
+  display: inline-block;
+  outline: none;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
+input[type=submit]{
+  margin-top: 10px; 
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  background-color: #990099;
+  color: white;
+  border-radius: 5px;
+  padding: 12px 10px;
+  font-family: "Times New Roman", Times, serif;
+  outline: none;
+}
+
+button {
+ margin-top: 10px; 
+  border: none;
+  text-align: center;
+  font-size: 15px;
+  background-color: #990099;
+  color: white;
+  border-radius: 5px;
+  padding: 12px 10px;
+  font-family: "Times New Roman", Times, serif; 
+  outline: none;
+}
+
+
+h1,h2 {
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+/*@media only screen and (max-width: 768px) {
+  .container {
+    display: block;
+  }  
+  .girlimg {
+    width: 100%; 
   }
-  .cancelbtn {
-     width: 100%;
+}*/
+
+@media only screen and (max-width: 320px) {
+  .imgbox {
+    width: 100%;
+  }
+  .girlimg {
+    width: 100%; /*For mobile screens*/
   }
 }
+
+
 </style>
 </head>
 <body>
+	<form action="#" method="get">
+	<img class="img-banner" src="2c46e1e21b76ea347bba76e650b98d90.jpg" alt="Logo">
 
-<h2>Login Form</h2>
+	<div class="container">
+		  <div class="imgbox">
+		    <img class="girlimg" src="beautiful-beauty-blurred-background-1386604.jpg" alt="image">
+		  </div>
 
-<form action="/action_page.php">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
+		  <div class="box">
+		  	<h1 style="color: #990099;display: block;">Login</h1>
+		  	<h2 style="margin-top: -5px;">Registered Customers</h2>
+		  	<p style="color: #808080;margin-top: -10px;">If you have an account with us.please login with your credentials</p>
+			  <label>Email</label><br>
+			  <input type="text" name="mail" placeholder="Enter your Email" required> <i class="far fa-envelope"></i><br>
+			  <label>Password</label><br>
+			  <input type="Password" name="passd" placeholder="Enter your Passowrd" required><i class="fas fa-lock"></i>
+			  <br>
+			  <input type="submit" name="ok" value="Login" ><br><br>
+			  <hr>
+			  <h2>New Customers</h2>
+			  <p style="color: #808080">By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping address,veiw and track your order in your account and more.</p>
+			  <button onclick="myfun()">CREATE ACCOUNT</button>
+		</div>
+	</div>
 </form>
+	<script type="text/javascript">
+		function myfun(){
+			alert('Comming Soon...')
+		}
 
+	</script>
 </body>
 </html>
