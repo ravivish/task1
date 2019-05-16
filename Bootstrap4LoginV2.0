@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Task2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+
+  <style type="text/css">
+    
+    .rounded {
+      height: 150px;
+      width: 150px;
+    }
+    #imgborder {
+    height: 100%;
+    width: 100%;
+    }
+/*    #ipid{
+      width:30%;
+      outline: none;
+    }*/
+
+    /*.rowshadow {
+    box-shadow: 0 0 50px black;
+    }*/
+
+  </style>
+</head>
+<body>
+<div class="forlogo">
+      <img class="rounded" src="Logo.jpg" alt="logo"></img> 
+</div>
+<div class="container-fluid mb-5 mt-3">
+    
+    <!-- <div class="shadow-xl p-3 mb-5 bg-white rounded"> -->
+          <div class="row shadow p-2 bg-white">
+              <div class="col-sm-4 col-md-3 mb-3 mt-3"><img src="Girl_images.jpeg" id="imgborder" alt="Girl_Images"></img></div>
+
+            <div class="col-sm-8 col-md-9" >
+                      <h1 class="mt-5">Login</h1>
+                      <h2>Registered Customers</h2>
+                      <div class="text-secondary">
+                      If you have an account with us.please login with your credentials
+                      </div>
+                      
+                    <div class="form-group">
+                      <label>Email</label>
+                        <div class="input-group">
+                         <input class="form-control py-2 border-right-0 border" id="ipid" type="text" placeholder="Enter your Email">
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-secondary border-left-0 border" type="button" disabled>
+                            <i class="fas fa-envelope"></i>
+                            </button>
+                        </span>
+
+                        </div>
+
+                    </div>
+                      
+                    <div class="form-group">
+                      <label>Password</label>
+                      <div class="input-group">
+                      <input type="Password" class="form-control py-2 border-right-0 border" id="ipid" placeholder="Enter your Passowrd" required>
+                       <span class="input-group-append">
+                            <button class="btn btn-outline-secondary border-left-0 border" type="button" disabled>
+                            <i class="fas fa-lock"></i>
+                            </button>
+                        </span>
+                      </div>
+                    </div>
+
+                      <button class="btn btn-primary">Login</button>
+                      <hr>
+                      <h2>New Customers</h2>
+                      <div class="mb-3 text-secondary">By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping address,veiw and track your order in your account and more.</div>
+                      <button class="btn btn-primary mb-5">CREATE ACCOUNT</button>
+            </div>
+          </div>
+        </div>
+
+
+</body>
+</html>
