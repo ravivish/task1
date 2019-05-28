@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image add and remove in Array</title>
+    <style>
+        #myfile {
+            margin-left: 40%;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type='file' id="myfile" accept='image/*' onchange="openFile(event)"><br>
+    <br>
+    <p id="space"></p>
+    <script>
+        var imgarray = [];
+        var text1 = "";
+        // var text2 = "";
+        var openFile = function (event) {
+            var input = event.target;
+
+            var reader = new FileReader();
+
+            reader.onload = function () {
+
+                imgarray.push(input.files[0].name);
+                document.getElementById("myfile").value = "";
+                changeImage();
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        };
+        function changeImage() {
+            var btn; var a = '';
+            for (let i = 0; i < imgarray.length; i++) {
+
+                text1 += "&nbsp" + "<img src=" + imgarray[i] + " id=" + i + " width='200px'> <button id=" + i +
+                    " class='dmg' onClick='deleteImage(this.id)'>Delete</button> ";
+            }
+
+            document.getElementById("space").innerHTML = text1;
+            text1 = "";
+
+        }
+
+        function deleteImage(data) {
+            imgarray.splice(data,1);
+            console.log("Deleted id: "+data + ". and remained array:" + imgarray+" ");
+            document.getElementsByTagName("IMG")[data].remove();
+            document.getElementsByClassName("dmg")[data].remove();
+           
+            if (data < (imgarray.length)) {
+                for (let i = data; i < imgarray.length; i++) {
+                    document.getElementsByTagName("IMG")[i].id = document.getElementsByTagName("IMG")[i].id-1;
+                    document.getElementsByClassName("dmg")[i].id = document.getElementsByClassName("dmg")[i].id-1;
+                }
+            }
+            
+        }
+    </script>
+
+</body>
+
+</html>
